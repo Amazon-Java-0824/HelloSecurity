@@ -1,5 +1,6 @@
 package com.ironhack.demosecurityjwt.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +27,7 @@ public class Role {
     private String name;
 
     @ManyToMany(mappedBy = "roles", fetch = LAZY)
+    @JsonIgnore
     private Collection<User> users = new ArrayList<>();
 
     public Role(String name) {

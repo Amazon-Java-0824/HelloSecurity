@@ -76,8 +76,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
      * @param response       HttpServletResponse
      * @param chain          FilterChain
      * @param authentication Authentication
-     * @throws IOException
-     * @throws ServletException
+     * @throws IOException if there is an Input/Output error
+     * @throws ServletException if there is a servlet related error
      */
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
