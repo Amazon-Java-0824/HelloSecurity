@@ -1,8 +1,8 @@
-package com.ironhack.demosecurityjwt.services.interfaces;
+package com.ironhack.demosecurityjwt.service;
 
-import com.ironhack.demosecurityjwt.models.Role;
+import com.ironhack.demosecurityjwt.model.Role;
 
-public interface RoleServiceInterface {
+public interface RoleService {
 
     /**
      * This method is used to save a Role entity to the database.
@@ -10,7 +10,7 @@ public interface RoleServiceInterface {
      * @param role the Role entity to be saved.
      * @return the saved Role entity.
      */
-    Role saveRole(Role role);
+    Role save(Role role);
 
     /**
      * This method is used to add a Role to a User.

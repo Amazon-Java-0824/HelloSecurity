@@ -1,25 +1,20 @@
-package com.ironhack.demosecurityjwt.controllers.impl;
+package com.ironhack.demosecurityjwt.controller;
 
-import com.ironhack.demosecurityjwt.controllers.interfaces.RoleControllerInterface;
-import com.ironhack.demosecurityjwt.dtos.RoleToUserDTO;
-import com.ironhack.demosecurityjwt.models.Role;
-import com.ironhack.demosecurityjwt.services.interfaces.RoleServiceInterface;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ironhack.demosecurityjwt.dto.RoleToUserDTO;
+import com.ironhack.demosecurityjwt.model.Role;
+import com.ironhack.demosecurityjwt.service.RoleService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * RESTful API for Role management
- */
+
 @RestController
 @RequestMapping("/api")
-public class RoleController implements RoleControllerInterface {
+@RequiredArgsConstructor
+public class RoleController {
 
-    /**
-     * User service for accessing user data
-     */
-    @Autowired
-    private RoleServiceInterface roleService;
+    private final RoleService roleService;
 
     /**
      * Save a new role
@@ -29,7 +24,7 @@ public class RoleController implements RoleControllerInterface {
     @PostMapping("/roles")
     @ResponseStatus(HttpStatus.CREATED)
     public void saveRole(@RequestBody Role role) {
-        roleService.saveRole(role);
+        roleService.save(role);
     }
 
     /**

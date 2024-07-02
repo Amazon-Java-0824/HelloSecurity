@@ -1,4 +1,4 @@
-package com.ironhack.demosecurityjwt.models;
+package com.ironhack.demosecurityjwt.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,11 +14,7 @@ import static jakarta.persistence.FetchType.EAGER;
  * Entity class for representing a User in the database
  */
 @Entity
-@Data // it has getters, setters, equals, hashcode, toString...
-//@Getter
-//@Setter
-//@EqualsAndHashCode
-//@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
@@ -33,11 +29,17 @@ public class User {
 
     private String password;
 
-    // We use EAGER to make sure the roles are retrieved immediately (without having to do additional queries)
-    // We are not using @JoinTable, joinColumns, inverseJoinColumns because we are using the default naming strategy
-    // similar to when we don't use @Column(name...) in a class attribute
     @ManyToMany(fetch = EAGER)
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
     private Collection<Role> roles = new ArrayList<>();
 
-    // getters, setters, constructors, toString, equals, hashCode not needed thanks to lombok ;)
+    public User(String name, String username, String password) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+    }
 }

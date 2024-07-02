@@ -1,31 +1,24 @@
-package com.ironhack.demosecurityjwt.services.impl;
+package com.ironhack.demosecurityjwt.service.impl;
 
-import com.ironhack.demosecurityjwt.models.Role;
-import com.ironhack.demosecurityjwt.models.User;
-import com.ironhack.demosecurityjwt.repositories.RoleRepository;
-import com.ironhack.demosecurityjwt.repositories.UserRepository;
-import com.ironhack.demosecurityjwt.services.interfaces.RoleServiceInterface;
+import com.ironhack.demosecurityjwt.model.Role;
+import com.ironhack.demosecurityjwt.model.User;
+import com.ironhack.demosecurityjwt.repository.RoleRepository;
+import com.ironhack.demosecurityjwt.repository.UserRepository;
+import com.ironhack.demosecurityjwt.service.RoleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class RoleService implements RoleServiceInterface {
+public class RoleServiceImpl implements RoleService {
 
-    /**
-     * Autowired UserRepository for database operations.
-     */
-    @Autowired
-    private UserRepository userRepository;
 
-    /**
-     * Autowired RoleRepository for database operations.
-     */
-    @Autowired
-    private RoleRepository roleRepository;
+    private final UserRepository userRepository;
+
+
+    private final RoleRepository roleRepository;
 
     /**
      * Saves a new role to the database
@@ -34,7 +27,7 @@ public class RoleService implements RoleServiceInterface {
      * @return the saved role
      */
     @Override
-    public Role saveRole(Role role) {
+    public Role save(Role role) {
         log.info("Saving new role {} to the database", role.getName());
         return roleRepository.save(role);
     }

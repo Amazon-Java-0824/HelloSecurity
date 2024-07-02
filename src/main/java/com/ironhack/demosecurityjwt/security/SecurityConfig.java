@@ -3,7 +3,6 @@ package com.ironhack.demosecurityjwt.security;
 import com.ironhack.demosecurityjwt.security.filters.CustomAuthenticationFilter;
 import com.ironhack.demosecurityjwt.security.filters.CustomAuthorizationFilter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,12 +11,11 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import static org.springframework.http.HttpMethod.*;
+import static org.springframework.http.HttpMethod.GET;
+import static org.springframework.http.HttpMethod.POST;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
 /**
@@ -30,22 +28,11 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 public class SecurityConfig {
 
     // UserDetailsService is an interface provided by Spring Security that defines a way to retrieve user information
-    @Autowired
-    private UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
 
     // Autowired instance of the AuthenticationManagerBuilder (provided by Spring Security)
-    @Autowired
-    private AuthenticationManagerBuilder authManagerBuilder;
+    private final AuthenticationManagerBuilder authManagerBuilder;
 
-    /**
-     * Bean definition for PasswordEncoder
-     *
-     * @return an instance of the DelegatingPasswordEncoder
-     */
-    @Bean
-    public PasswordEncoder encoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
 
     /**
      * Bean definition for AuthenticationManager

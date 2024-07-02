@@ -1,26 +1,21 @@
-package com.ironhack.demosecurityjwt.controllers.impl;
+package com.ironhack.demosecurityjwt.controller;
 
-import com.ironhack.demosecurityjwt.controllers.interfaces.UserControllerInterface;
-import com.ironhack.demosecurityjwt.models.User;
-import com.ironhack.demosecurityjwt.services.interfaces.UserServiceInterface;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ironhack.demosecurityjwt.model.User;
+import com.ironhack.demosecurityjwt.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * RESTful API for User management
- */
 @RestController
 @RequestMapping("/api")
-public class UserController implements UserControllerInterface {
+@RequiredArgsConstructor
+public class UserController {
 
-    /**
-     * User service for accessing user data
-     */
-    @Autowired
-    private UserServiceInterface userService;
+
+    private final UserService userService;
 
     /**
      * Get a list of all users
