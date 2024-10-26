@@ -1,7 +1,7 @@
-package com.ironhack.demosecurityjwt.security;
+package com.ironhack.hellosecurity.security;
 
-import com.ironhack.demosecurityjwt.security.filters.CustomAuthenticationFilter;
-import com.ironhack.demosecurityjwt.security.filters.CustomAuthorizationFilter;
+import com.ironhack.hellosecurity.security.filters.CustomAuthenticationFilter;
+import com.ironhack.hellosecurity.security.filters.CustomAuthorizationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -71,7 +71,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests((requests) -> requests
                 .requestMatchers("/api/login/**").permitAll()// public endpoint, we could add more if we wanted to
                 .requestMatchers("api/greet").permitAll()
-                // could be deleted .requestMatchers(GET, "/api/users").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .requestMatchers("api/greet/personal").hasAnyAuthority("ROLE_USER")
                 .requestMatchers(GET, "/api/users").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .requestMatchers(POST, "/api/users").hasAnyAuthority("ROLE_ADMIN")
                 .requestMatchers(POST, "/api/roles").hasAnyAuthority("ROLE_ADMIN")

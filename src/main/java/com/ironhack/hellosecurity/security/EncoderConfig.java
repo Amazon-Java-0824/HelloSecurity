@@ -1,4 +1,4 @@
-package com.ironhack.demosecurityjwt.security;
+package com.ironhack.hellosecurity.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,9 +1,9 @@
-package com.ironhack.demosecurityjwt.controller;
+package com.ironhack.hellosecurity.controller;
 
 
-import com.ironhack.demosecurityjwt.dto.RoleToUserDTO;
-import com.ironhack.demosecurityjwt.model.Role;
-import com.ironhack.demosecurityjwt.service.RoleService;
+import com.ironhack.hellosecurity.dto.RoleToUserDTO;
+import com.ironhack.hellosecurity.model.Role;
+import com.ironhack.hellosecurity.service.RoleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +33,7 @@ public class RoleController {
      * @param roleToUserDTO DTO containing the username and role name
      */
     @PostMapping("/roles/add-to-user")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.OK)
     public void addRoleToUser(@RequestBody RoleToUserDTO roleToUserDTO) {
         roleService.addRoleToUser(roleToUserDTO.getUsername(), roleToUserDTO.getRoleName());
     }

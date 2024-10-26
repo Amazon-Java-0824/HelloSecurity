@@ -1,9 +1,9 @@
-package com.ironhack.demosecurityjwt.demo;
+package com.ironhack.hellosecurity.demo;
 
-import com.ironhack.demosecurityjwt.model.Role;
-import com.ironhack.demosecurityjwt.model.User;
-import com.ironhack.demosecurityjwt.service.RoleService;
-import com.ironhack.demosecurityjwt.service.UserService;
+import com.ironhack.hellosecurity.model.Role;
+import com.ironhack.hellosecurity.model.User;
+import com.ironhack.hellosecurity.service.RoleService;
+import com.ironhack.hellosecurity.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

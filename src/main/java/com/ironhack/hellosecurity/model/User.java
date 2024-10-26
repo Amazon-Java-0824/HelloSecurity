@@ -1,4 +1,4 @@
-package com.ironhack.demosecurityjwt.model;
+package com.ironhack.hellosecurity.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

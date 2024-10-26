@@ -1,6 +1,6 @@
-package com.ironhack.demosecurityjwt.repository;
+package com.ironhack.hellosecurity.repository;
 
-import com.ironhack.demosecurityjwt.model.Role;
+import com.ironhack.hellosecurity.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

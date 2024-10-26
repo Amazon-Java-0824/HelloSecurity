@@ -1,9 +1,9 @@
-package com.ironhack.demosecurityjwt.security.filters;
+package com.ironhack.hellosecurity.security.filters;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ironhack.demosecurityjwt.dto.LoginRequest;
+import com.ironhack.hellosecurity.dto.LoginRequest;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

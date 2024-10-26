@@ -1,8 +1,8 @@
-package com.ironhack.demosecurityjwt.controller;
+package com.ironhack.hellosecurity.controller;
 
 
-import com.ironhack.demosecurityjwt.model.User;
-import com.ironhack.demosecurityjwt.service.UserService;
+import com.ironhack.hellosecurity.model.User;
+import com.ironhack.hellosecurity.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

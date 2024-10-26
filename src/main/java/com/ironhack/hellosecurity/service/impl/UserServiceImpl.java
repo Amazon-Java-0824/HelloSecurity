@@ -1,8 +1,8 @@
-package com.ironhack.demosecurityjwt.service.impl;
+package com.ironhack.hellosecurity.service.impl;
 
-import com.ironhack.demosecurityjwt.model.User;
-import com.ironhack.demosecurityjwt.repository.UserRepository;
-import com.ironhack.demosecurityjwt.service.UserService;
+import com.ironhack.hellosecurity.model.User;
+import com.ironhack.hellosecurity.repository.UserRepository;
+import com.ironhack.hellosecurity.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

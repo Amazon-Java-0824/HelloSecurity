@@ -1,6 +1,6 @@
-package com.ironhack.demosecurityjwt.service;
+package com.ironhack.hellosecurity.service;
 
-import com.ironhack.demosecurityjwt.model.Role;
+import com.ironhack.hellosecurity.model.Role;
 
 public interface RoleService {
 

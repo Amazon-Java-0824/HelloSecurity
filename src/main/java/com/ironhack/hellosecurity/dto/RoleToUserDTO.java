@@ -1,4 +1,4 @@
-package com.ironhack.demosecurityjwt.dto;
+package com.ironhack.hellosecurity.dto;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.ironhack.demosecurityjwt.service;
+package com.ironhack.hellosecurity.service;
 
-import com.ironhack.demosecurityjwt.model.User;
+import com.ironhack.hellosecurity.model.User;
 
 import java.util.List;
 
